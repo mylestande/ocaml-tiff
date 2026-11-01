@@ -1,8 +1,8 @@
 # ocaml-tiff
 
-The ocaml-tiff library provides a pure OCaml implementation for reading and
-decoding TIFF (Tagged Image File Format) images. It is designed to parse TIFF
-structures, extract metadata, and reconstruct pixel data.
+The ocaml-tiff library provides a pure OCaml implementation for reading,
+decoding and writing TIFF (Tagged Image File Format) images. It is designed to
+parse TIFF structures, extract metadata, and reconstruct pixel data.
 
 
 [TIFF file format](https://en.wikipedia.org/wiki/TIFF)
@@ -24,15 +24,16 @@ dispatches decompression to the appropriate module (e.g. `lzw.ml`).
 
 ### Currently supported
 * Reading TIFF files
-* Classic TIFFs (32-bit offsets)
+* Writing TIFF files (uncompressed strips only)
+* Classic TIFFs (32-bit offsets) and BigTIFFs (64-bit offsets)
 * Strip-based storage
 * Uncompressed (No compression)
 * LZW Compression
+* Deflate Compression (ZIP)
 * Basic GeoTIFF metadata
+* GeoKeyDirectory parsing
 
 ### Future support
-* Writing TIFF files
 * Tile-based storage
-* Deflate Compression (ZIP)
 * JPEG Compression
-* Advanced GeoTIFF metadata (GeoKeyDirectory)
+* Writing compressed data
